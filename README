@@ -1,0 +1,20 @@
+Justifake
+---------
+
+PDF vierge généré depuis :
+
+    https://www.fichier-pdf.fr/2015/04/07/facture-edf-2013-vierge-pdf-2/facture-edf-2013-vierge-pdf.pdf
+
+    qpdf --stream-data=uncompress --qdf --object-streams=disable \
+         facture-edf-2013-vierge-pdf.pdf \
+	 out.pdf
+
+Chercher les mots dans le PDF décompressé, par exemple le texte « 22/ » peut
+être écrit comme :
+
+    (2)-11.273(2)-11.273(/)
+
+Enlever des phrases entières pour éviter les décalages dus à la suppression d'un
+seul mot.
+
+Recompresser le PDF pour gagner de la place.

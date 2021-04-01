@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html style="height: 100%;">
+  <head>
+    <meta charset="utf-8">
+    <title>Justifake</title>
+    <link rel="stylesheet" href="bootstrap-3.4.1.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+
+  <body style="height: 100%;">
+    <div style="display: flex; width: 100%; height: 100%; flex-direction: column; overflow: hidden;">
+      <form class="form-inline">
+        <div>
+          <label class="radio-inline">
+            <input type="radio" id="title-M." name="title"> M.
+          </label>
+          <label class="radio-inline">
+            <input type="radio" id="title-Mme" name="title"> Mme
+          </label>
+          <div class="form-group">
+            <input type="text" class="form-control" id="firstName" placeholder="Prénom">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" id="lastName" placeholder="Nom">
+          </div>
+        </div>
+        <div>
+          <textarea class="form-control" id="address" cols="30" rows="3"
+                    placeholder="Adresse"></textarea>
+          <div class="form-group">
+            Facture du<br>
+            <input type="text" class="form-control" id="date" placeholder="Date">
+          </div>
+        </div>
+        <div>
+          <button type="button" class="btn btn-default" onclick="display()">
+            → Afficher
+          </button>
+          <button type="button" class="btn btn-default" onclick="save()">
+            ↓ Télécharger
+          </button>
+        </div>
+      </form>
+
+      <div id="errors" style="font-family: monospace; background-color: #fcc;"></div>
+
+      <iframe id="pdf" style="flex-grow: 1;"></iframe>
+    </div>
+
+    <script src="pdf-lib-1.16.0.min.js"></script>
+    <script src="download-1.4.7.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
